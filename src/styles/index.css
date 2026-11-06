@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Smooth scrolling is owned by Lenis (Phase 5); keep native behavior off so
+       it does not fight the rAF-driven smoothed scroll. Reduced-motion falls back
+       to instant scrolling in the reduced-motion media query below. */
+    scroll-behavior: auto;
+    /* Anchor targets below the fixed navigation */
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background-color: theme('colors.ivory');
+    color: theme('colors.charcoal');
+    font-family: theme('fontFamily.sans');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Ensure every anchor target lands below the fixed navigation. */
+  section[id],
+  [id].scroll-mt-header {
+    scroll-margin-top: 80px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.serif');
+    font-weight: 500;
+    letter-spacing: theme('letterSpacing.editorial');
+  }
+
+  ::selection {
+    background-color: theme('colors.gold');
+    color: theme('colors.white');
+  }
+
+  /* Keyboard focus indicator. Always visible on focus (color + outline). */
+  :focus-visible {
+    outline: 2px solid theme('colors.gold');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Reduce motion path: disable smooth scrolling, animations, transitions, parallax. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-editorial {
+    @apply mx-auto w-full max-w-editorial px-6 sm:px-8 lg:px-12;
+  }
+
+  .label-eyebrow {
+    @apply font-sans text-xs uppercase tracking-label text-gold;
+  }
+
+  /* Reading-voice for paragraph copy. Spectral pairs with Cormorant Garamond
+     headings and gives long-form prose a more editorial cadence than Inter
+     alone, without changing the underlying layout system. */
+  .prose-body {
+    @apply font-prose leading-relaxed;
+  }
+
+  .surface-dark {
+    @apply bg-charcoal text-ivory;
+  }
+
+  .surface-light {
+    @apply bg-ivory text-charcoal;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Skip-to-content: visible only when focused. */
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 60;
+    transform: translateY(-150%);
+    transition: transform 0.25s ease;
+  }
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
+  /* Custom cursor: decorative only. Never blocks clicks. */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid theme('colors.gold');
+    border-radius: 9999px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 120;
+    mix-blend-mode: difference;
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  }
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid theme('colors.gold');
+    border-radius: 9999px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 119;
+    opacity: 0.55;
+  }
+
+  /* Visible on fine-pointer devices only. Hidden on touch / coarse pointers. */
+  @media (pointer: fine) {
+    body.has-fine-pointer .custom-cursor,
+    body.has-fine-pointer .custom-cursor-ring {
+      display: block;
+    }
+    body.has-fine-pointer {
+      cursor: none;
+    }
+  }
+
+  /* Status indicators include both color AND text/icon so they are not color-only. */
+  .status-available {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
+  }
+  .status-under-offer {
+    @apply bg-amber-50 text-amber-700 border-amber-200;
+  }
+  .status-coming-soon {
+    @apply bg-sky-50 text-sky-700 border-sky-200;
+  }
+  .status-sold {
+    @apply bg-rose-50 text-rose-700 border-rose-200;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .custom-cursor,
+    .custom-cursor-ring {
+      display: none !important;
+    }
+  }
+}

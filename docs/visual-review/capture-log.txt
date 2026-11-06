@@ -1,0 +1,46 @@
+2026-08-11T17:56:55.754Z browser launched
+2026-08-11T17:57:07.689Z FULL 1440x900 captured
+--- issues for full-1440x900 ---
+  console: warning: [.WebGL-0x746c012bd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  console: warning: [.WebGL-0x746c012bd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  console: warning: [.WebGL-0x746c012bd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  console: warning: [.WebGL-0x746c012bd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+2026-08-11T17:57:14.982Z FULL 1280x800 captured
+2026-08-11T17:57:21.693Z FULL 1024x768 captured
+2026-08-11T17:57:27.421Z FULL 768x1024 captured
+2026-08-11T17:57:32.105Z FULL 390x844 captured
+2026-08-11T17:57:36.931Z FULL 360x800 captured
+2026-08-11T17:57:43.228Z SECTION 01-hero captured
+2026-08-11T17:57:49.743Z SECTION 02-showcase captured
+2026-08-11T17:57:56.434Z SECTION 03-properties captured
+2026-08-11T17:58:03.128Z SECTION 04-cinematic captured
+2026-08-11T17:58:09.801Z SECTION 05-services captured
+2026-08-11T17:58:17.063Z SECTION 06-neighborhoods captured
+2026-08-11T17:58:24.433Z SECTION 07-map-fallback captured
+2026-08-11T17:58:31.218Z SECTION 08-calculator captured
+2026-08-11T17:58:37.111Z SECTION 09-expertise captured
+2026-08-11T17:58:42.796Z SECTION 10-testimonials captured
+2026-08-11T17:58:49.020Z SECTION 11-contact captured
+2026-08-11T17:58:55.940Z SECTION 12-final-cta captured
+2026-08-11T17:59:01.916Z SECTION 13-footer captured
+--- issues for section-13-footer ---
+  console: error: Failed to load resource: the server responded with a status of 404 ()
+  network:  https://fonts.gstatic.com/s/inter/v20/UcCB3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfU5NJeWUdIOjBeTGiXZdND2M.woff2 -> net::ERR_ABORTED
+2026-08-11T17:59:08.893Z INTERACT modal-desktop captured
+2026-08-11T17:59:13.737Z INTERACT modal-mobile captured
+2026-08-11T17:59:18.154Z INTERACT mobile-menu captured
+2026-08-11T17:59:26.399Z INTERACT cinematic-desktop captured
+2026-08-11T17:59:29.079Z REDUCE 01-hero captured
+2026-08-11T17:59:31.261Z REDUCE 02-showcase captured
+2026-08-11T17:59:33.424Z REDUCE 03-properties captured
+2026-08-11T17:59:35.817Z REDUCE 04-cinematic captured
+2026-08-11T17:59:37.980Z REDUCE 05-services captured
+2026-08-11T17:59:40.243Z REDUCE 06-neighborhoods captured
+2026-08-11T17:59:42.220Z REDUCE 07-map-fallback captured
+2026-08-11T17:59:44.174Z REDUCE 08-calculator captured
+2026-08-11T17:59:46.209Z REDUCE 09-expertise captured
+2026-08-11T17:59:48.194Z REDUCE 10-testimonials captured
+2026-08-11T17:59:50.305Z REDUCE 11-contact captured
+2026-08-11T18:00:21.799Z REDUCE 12-final-cta captured
+2026-08-11T18:00:53.241Z REDUCE 13-footer captured
+2026-08-11T18:00:53.374Z browser closed
